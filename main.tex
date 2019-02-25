@@ -1,0 +1,341 @@
+%% UNIVERSIDADE FEDERAL DA PARAÍBA
+%% CENTRO DE ENERGIAS ALTERNATIVAS E RENOVÁVEIS
+%% DEPARTAMENTO DE ENGENHARIA ELÉTRICA
+
+%% Criado por Gabriel Luiz De França Sales
+
+%% Arquivo principal TCC
+
+
+% ----
+% Configurações abntex2
+% ----
+% Cabeçalho
+\input{arquives/abntex2_settings.tex}
+
+% Informações da capa
+\input{arquives/abntex2_settingsCapa.tex}
+
+% Informações do documento
+\input{arquives/abntex2_pdfSettings.tex}
+% ----
+
+% ----
+% Configurações adicionais 
+% ----
+\input{arquives/additional_settings.tex}
+% ----
+
+
+% ----
+% Início do documento
+% ----
+\begin{document}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+% \pretextual
+
+% ---
+% Capa
+% ---
+\imprimircapa
+% ---
+
+% ---
+% Folha de rosto
+% (o * indica que haverá a ficha bibliográfica)
+% ---
+\imprimirfolhaderosto*
+% ---
+
+% ---
+% Inserir a ficha bibliografica
+% ---
+\input{pretextual/ficha_catalografica.tex}
+% ---
+
+% ---
+% Inserir errata
+% ---
+\input{pretextual/errata.tex}
+% ---
+
+% ---
+% Inserir folha de aprovação
+% ---
+\input{pretextual/folha_aprovacao.tex}
+% ---
+
+% ---
+% Dedicatória
+% ---
+\begin{dedicatoria}
+   \vspace*{\fill}
+   \centering
+   \noindent
+   \textit{ Este trabalho é dedicado às crianças adultas que,\\
+   quando pequenas, sonharam em se tornar cientistas.} \vspace*{\fill}
+\end{dedicatoria}
+% ---
+
+% ---
+% Agradecimentos
+% ---
+\input{pretextual/agradecimentos.tex}
+% ---
+
+% ---
+% Epígrafe
+% ---
+\begin{epigrafe}
+    \vspace*{\fill}
+	\begin{flushright}
+		\textit{``Não vos amoldeis às estruturas deste mundo, \\
+		mas transformai-vos pela renovação da mente, \\
+		a fim de distinguir qual é a vontade de Deus: \\
+		o que é bom, o que Lhe é agradável, o que é perfeito.\\
+		(Bíblia Sagrada, Romanos 12, 2)}
+	\end{flushright}
+\end{epigrafe}
+% ---
+
+% ---
+% RESUMOS
+% ---
+\input{pretextual/resumos.tex}
+% ---
+
+% ---
+% inserir lista de ilustrações
+% ---
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de tabelas
+% ---
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de abreviaturas e siglas
+% ---
+\begin{siglas}
+  \item[ABNT] Associação Brasileira de Normas Técnicas
+  \item[abnTeX] ABsurdas Normas para TeX
+\end{siglas}
+% ---
+
+% ---
+% inserir lista de símbolos
+% ---
+\begin{simbolos}
+  \item[$ \Gamma $] Letra grega Gama
+  \item[$ \Lambda $] Lambda
+  \item[$ \zeta $] Letra grega minúscula zeta
+  \item[$ \in $] Pertence
+\end{simbolos}
+% ---
+
+% ---
+% inserir o sumario
+% ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+% ---
+
+
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+% ----------------------------------------------------------
+% Introdução (exemplo de capítulo sem numeração, mas presente no Sumário)
+% ----------------------------------------------------------
+\chapter*[Introdução]{Introdução}
+\addcontentsline{toc}{chapter}{Introdução}
+% ----------------------------------------------------------
+
+\input{chapters/INTRODUCAO.tex}
+
+
+
+% ----------------------------------------------------------
+% PARTE
+% ----------------------------------------------------------
+\part{Preparação da pesquisa}
+% ----------------------------------------------------------
+
+% ---
+% Capitulo com exemplos de comandos inseridos de arquivo externo 
+% ---
+\include{abntex2-modelo-include-comandos}
+% ---
+
+% ----------------------------------------------------------
+% PARTE
+% ----------------------------------------------------------
+\part{Referenciais teóricos}
+% ----------------------------------------------------------
+
+% ---
+% Capitulo de revisão de literatura
+% ---
+\chapter{Lorem ipsum dolor sit amet}
+% ---
+
+% ---
+\section{Aliquam vestibulum fringilla lorem}
+% ---
+
+\lipsum[1]
+
+\lipsum[2-3]
+
+% ----------------------------------------------------------
+% PARTE
+% ----------------------------------------------------------
+\part{Resultados}
+% ----------------------------------------------------------
+
+% ---
+% primeiro capitulo de Resultados
+% ---
+\chapter{Lectus lobortis condimentum}
+% ---
+
+% ---
+\section{Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+posuere cubilia Curae}
+% ---
+
+\lipsum[21-22]
+
+% ---
+% segundo capitulo de Resultados
+% ---
+\chapter{Nam sed tellus sit amet lectus urna ullamcorper tristique interdum
+elementum}
+% ---
+
+% ---
+\section{Pellentesque sit amet pede ac sem eleifend consectetuer}
+% ---
+
+\lipsum[24]
+
+% ----------------------------------------------------------
+% Finaliza a parte no bookmark do PDF
+% para que se inicie o bookmark na raiz
+% e adiciona espaço de parte no Sumário
+% ----------------------------------------------------------
+%\phantompart
+
+% ---
+% Conclusão (outro exemplo de capítulo sem numeração e presente no sumário)
+% ---
+\chapter*[Conclusão]{Conclusão}
+\addcontentsline{toc}{chapter}{Conclusão}
+% ---
+
+\lipsum[31-33]
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+\bibliography{abntex2-modelo-references}
+
+% ----------------------------------------------------------
+% Glossário
+% ----------------------------------------------------------
+%
+% Consulte o manual da classe abntex2 para orientações sobre o glossário.
+%
+%\glossary
+
+% ----------------------------------------------------------
+% Apêndices
+% ----------------------------------------------------------
+
+% ---
+% Inicia os apêndices
+% ---
+\begin{apendicesenv}
+
+% Imprime uma página indicando o início dos apêndices
+\partapendices
+
+% ----------------------------------------------------------
+\chapter{Quisque libero justo}
+% ----------------------------------------------------------
+
+\lipsum[50]
+
+% ----------------------------------------------------------
+\chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra ligula
+ac pretium ante justo a nulla curabitur tristique arcu eu metus}
+% ----------------------------------------------------------
+\lipsum[55-57]
+
+\end{apendicesenv}
+% ---
+
+
+% ----------------------------------------------------------
+% Anexos
+% ----------------------------------------------------------
+
+% ---
+% Inicia os anexos
+% ---
+\begin{anexosenv}
+
+% Imprime uma página indicando o início dos anexos
+\partanexos
+
+% ---
+\chapter{Morbi ultrices rutrum lorem.}
+% ---
+\lipsum[30]
+
+% ---
+\chapter{Cras non urna sed feugiat cum sociis natoque penatibus et magnis dis
+parturient montes nascetur ridiculus mus}
+% ---
+
+\lipsum[31]
+
+% ---
+\chapter{Fusce facilisis lacinia dui}
+% ---
+
+\lipsum[32]
+
+\end{anexosenv}
+
+%---------------------------------------------------------------------
+% INDICE REMISSIVO
+%---------------------------------------------------------------------
+%\phantompart
+\printindex
+%---------------------------------------------------------------------
+
+\end{document}
