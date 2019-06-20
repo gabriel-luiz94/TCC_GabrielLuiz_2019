@@ -1,7 +1,7 @@
 
-De acordo com a estrutura do trabalho proposto, o embasamento teórico desenvolvido busca mostrar os passos para o projeto do inversor, do conversor cc/cc boost e o modelo de turbina e gerador síncrono de imãs permanentes (PMSG). O modelo da rede e carga são apresentados na simulação e buscam representar o comportamento normal da rede elétrica de distribuição.
+De acordo com a estrutura do trabalho proposto, o embasamento teórico desenvolvido busca mostrar os passos para o projeto do inversor, do conversor  elevador e o modelo de turbina e gerador síncrono de imãs permanentes (PMSG). O modelo da rede e carga são apresentados na simulação e buscam representar o comportamento normal da rede elétrica monofásica de distribuição.
 
-Desta forma os modelos desenvolvidos foram:
+Os modelos desenvolvidos foram:
 
 \begin{itemize}
     \item Inversor monofásico de ponte completa;
@@ -10,8 +10,8 @@ Desta forma os modelos desenvolvidos foram:
     \item Gerador síncrono de imãs permanentes (\textit{Permanent Magnet Synchronous Generator - PMSG});
 \end{itemize}
 
+Com o objetivo de controlar a velocidade angular da turbina, foi desenvolvido um controlador MPPT para o conjunto de geração. Este controle atua na corrente do conversor aumentando ou diminuindo a carga vista pelos terminais do gerador. Desta forma, o torque eletromagnético de oposição imposto pelo gerador aumenta ou diminui controlando a velocidade angular da turbina. Assim, seguindo as curvas de potência versus velocidade angular, é possível obter o ponto de operação que maximiza a extração de potência para cada velocidade de vento.
 
-De acordo com a topologia adotada neste trabalho, a tensão de saída do gerador apresenta nível de tensão e frequência variável. Desta forma, não é possível a conexão direta a rede. Além disso não há mecanismos que garantam o melhor aproveitamento da energia disponível o que não é desejável em geração distribuída. 
 
-Assim utilizou-se um conversor CC/CC e um inversor para controlar a tensão e frequência de saída do sistema garantindo a sincronização com a rede. Além disso, buscou-se controlar a velocidade da turbina através de um controle MPPT (Maximum Power Point Tracking)
-\section{Inversor Monofásico}
+
+
